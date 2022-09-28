@@ -153,6 +153,7 @@ form {
 
 .footer {
   border-style: double;
+  color:purple;
   flex-shrink: 0;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.998);
