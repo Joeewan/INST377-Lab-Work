@@ -92,8 +92,8 @@ form {
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: #0dff05;
-  color: #ffffff;
+  background-color: #046d00;
+  color: #000000;
 
   /* shapes */
   border-radius: 6px;
@@ -151,13 +151,13 @@ form {
 .footer {
   flex-shrink: 0;
   padding: 1rem;
-  background-color: rgba(0, 255, 38, 0.8);
+  background-color: rgba(0, 98, 15, 0.8);
   font-size: 1.2rem;
   font-weight: 600;
 }
 
 .footer a {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: underline;
 }
 
