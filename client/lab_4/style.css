@@ -96,6 +96,7 @@ form {
   color: #000000;
 
   /* shapes */
+  border-style: double;
   border-radius: 6px;
   font-size: 1.5rem;
   padding: 1.25rem;
@@ -128,7 +129,7 @@ form {
 }
 
 .left_section {
-  border-style: inset;
+  border-style: double;
   background-color: rgba(1, 26, 252, 0.8);
   flex: 0 1 auto;
   margin: 1rem;
@@ -150,6 +151,7 @@ form {
 */
 
 .footer {
+  border-style: double;
   flex-shrink: 0;
   padding: 1rem;
   background-color: rgba(0, 98, 15, 0.8);
