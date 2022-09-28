@@ -161,7 +161,7 @@ form {
 }
 
 .footer a {
-  color: rgb(0, 0, 0);
+  color: rgb(90, 1, 158);
   text-decoration: underline;
 }
 
@@ -174,7 +174,7 @@ form {
   /* Hue, saturation, luminosity, alpha */
   background-color: hsla(0, 0%, 90%, 0.15);
   /* red, green, blue, alpha */
-  color: rgb(122, 1, 222);
+  color: rgb(4, 17, 255);
   text-decoration: double;
 }
 
