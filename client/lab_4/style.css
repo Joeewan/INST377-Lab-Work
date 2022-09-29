@@ -30,7 +30,7 @@ body {
   font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  background-color: rgb(2, 162, 93);
+  background-color: #8A4FFF;
 }
 
 
@@ -92,7 +92,7 @@ form {
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: #8A4FFF;
+  background-color: #C3BEF7;
   color: #000000;
 
   /* shapes */
@@ -130,7 +130,7 @@ form {
 
 .left_section {
   border-style: double;
-  background-color: rgba(121, 0, 101, 0.7);
+  background-color:#EFFFFA;
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
@@ -138,7 +138,7 @@ form {
 
 .right_section {
   border-style: double;
-  background-color: rgba(104, 0, 208, 0.7);
+  background-color: #EFFFFA;
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
@@ -156,7 +156,7 @@ form {
   color:purple;
   flex-shrink: 0;
   padding: 1rem;
-  background-color: #8A4FFF;
+  background-color: #C3BEF7;
   font-size: 1.2rem;
   font-weight: 600;
 }
