@@ -92,7 +92,7 @@ form {
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: rgba(180, 197, 87, 0.7);
+  background-color: #8A4FFF;
   color: #000000;
 
   /* shapes */
@@ -130,7 +130,7 @@ form {
 
 .left_section {
   border-style: double;
-  background-color: rgba(104, 0, 208, 0.7);
+  background-color: rgba(121, 0, 101, 0.7);
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
@@ -156,7 +156,7 @@ form {
   color:purple;
   flex-shrink: 0;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.998);
+  background-color: #8A4FFF;
   font-size: 1.2rem;
   font-weight: 600;
 }
