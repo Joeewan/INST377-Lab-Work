@@ -30,7 +30,7 @@ body {
   font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(2, 162, 93);
 }
 
 
@@ -92,7 +92,7 @@ form {
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: rgba(104, 0, 208, 0.7);
+  background-color: rgba(180, 197, 87, 0.7);
   color: #000000;
 
   /* shapes */
