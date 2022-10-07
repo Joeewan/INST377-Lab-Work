@@ -1,3 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joseph Ewan's Lab for INST377</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Joseph Ewan's Lab 4</h1>
+      </header>
+      <div class="container">
+        <div class="left_section box">
+          <form action="/api">
+            <label for="resto"></label><h2>Form Input</h2>
+            <div class="box"><p>Restaurant Name</p>
+            <input type="text" name="resto" id="resto" />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+        <div class="container">
+        <div class="right_section box">
+        <h3>Local Restaurants</h3>
+        <div class="box">
+            <p> A list of Restaurants from an API </p>
+             </div>
+            </div>
+        </div>
+        <div class="Restaurant_List"></div>
+      </div>
+    </div>
+    <footer class="footer"><a href="http://github.com/Joeewan" target="_blank" rel="noopener noreferrer">Link: https://github.com/Joeewan</a> Github Joeewan</footer>
+  </body>
+</html>
+
+
+
 <!-- Bring in your successful HTML/CSS from the Flexbox lab -->
 <!-- Your page will need a form in it with an 'action' to /api and a single text field with an id/name of "resto" -->
 <!-- If you open /routes/apiRoutes and go to line 38 you will find the server side answer to your request! -->
