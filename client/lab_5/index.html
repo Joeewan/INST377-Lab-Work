@@ -13,10 +13,11 @@
       </header>
       <div class="container">
         <div class="left_section box">
-          <form action="/api" class="box_main_form">
-            <label for="resto"></label><h2>Form Input</h2>
-            <div class="box"><p>Restaurant Name</p>
-            <input type="text" name="resto" id="resto" />
+          <form action="/api" class="box main_form"></form>
+            <div>
+             <label for="resto"></label><h2>Form Input</h2>
+             <input type="text" name="resto" id="resto" />
+            </div>
             <button type="submit">Submit</button>
           </form>
         </div>
@@ -24,7 +25,7 @@
         <div class="container">
         <div class="right_section box">
         <h3>Local Restaurants</h3>
-        <div class="box">
+        <div class="box" id="restaurant_list">
             <p> A list of Restaurants from an API </p>
              </div>
             </div>
