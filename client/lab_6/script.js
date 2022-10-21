@@ -19,7 +19,12 @@ function getRandomIntInclusive(min, max) {
 
 function injectHTML(list) {
   console.log('fired injectHTML');
-  const objective = document.querySelector("#restaurant_list");
+  const objective = document.querySelector('#restaurant_list');
+  objective.innerHTML='';
+  list.forEach((item) => {
+    const str = `<li>${item.name}</li>`;
+    objective.innerHTML += str;
+  });
   /*
   ## JS and HTML Injection
     There are a bunch of methods to inject text or HTML into a document using JS
@@ -42,7 +47,7 @@ function processRestaurants(list) {
   const Arraynew = order.map((item) => {
     const index = getRandomIntInclusive(0, list.length);
     return list[index];
-  })
+  });
   return Arraynew;
   // const randos = array.map((item) => {
   // return;
