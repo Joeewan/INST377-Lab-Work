@@ -20,7 +20,10 @@ function getRandomIntInclusive(min, max) {
 function injectHTML(list) {
   console.log('fired injectHTML');
   const objective = document.querySelector('#restaurant_list');
-  objective.innerHTML='';
+  objective.innerHTML = '';
+  const listEl = document.createElement('ol');
+  objective.appendChild(listEl);
+
   list.forEach((item) => {
     const str = `<li>${item.name}</li>`;
     objective.innerHTML += str;
