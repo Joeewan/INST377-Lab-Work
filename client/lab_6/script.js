@@ -21,12 +21,13 @@ function injectHTML(list) {
   console.log('fired injectHTML');
   const objective = document.querySelector('#restaurant_list');
   objective.innerHTML = '';
+
   const listEl = document.createElement('ol');
   objective.appendChild(listEl);
-
   list.forEach((item) => {
-    const str = `<li>${item.name}</li>`;
-    objective.innerHTML += str;
+    const element = document.createElement('li');
+    element.innerText = item.name;
+    listEl.appendChild(element);
   });
   /*
   ## JS and HTML Injection
