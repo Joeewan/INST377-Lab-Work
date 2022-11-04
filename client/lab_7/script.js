@@ -1,16 +1,5 @@
 /* eslint-disable max-len */
 
-/*
-  Hook this script to index.html
-  by adding `<script src="script.js">` just before your closing `</body>` tag
-*/
-
-/*
-  ## Utility Functions
-    Under this comment place any utility functions you need - like an inclusive random number selector
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-*/
-
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -125,7 +114,7 @@ async function mainEvent() {
   console.log(`${arrayFromJson.data[0].name} ${arrayFromJson.data[0].category}`);
 
   // This IF statement ensures we can't do anything if we don't have information yet
-  if (arrayFromJson.data?.length > 0) 
+  if (arrayFromJson.data?.length > 0) {
     submit.style.display = 'block'; // let's turn the submit button back on by setting it to display as a block when we have data available
 
     loadAnimation.classList.remove('lds-ellipsis');
@@ -135,9 +124,9 @@ async function mainEvent() {
 
     form.addEventListener('input', (event) => {
       console.log('input', event.target.value);
-      const newFilterList = filterList(arrayFromJson.data.event.target.value);
+      currentList = filterList(arrayFromJson.data.event.target.value);
       injectHTML(newFilterList);
-    })
+    });
 
     // And here's an eventListener! It's listening for a "submit" button specifically being clicked
     // this is a synchronous event event, because we already did our async request above, and waited for it to resolve
