@@ -67,12 +67,12 @@ function processRestaurants(list) {
 }
 
 function filterList(array, filterInputValue) {
-  const newArray = array.filter((item) => {
+  return list.filter((item) => {
+    if (!item.name) { return; }
     const lowerCaseName = item.name.toLowerCase();
     const lowerCaseQuery = filterInputValue.toLowerCase();
     return lowerCaseName.includes(lowerCaseQuery);
   });
-  return newArray;
 }
 
 async function mainEvent() {
@@ -123,8 +123,8 @@ async function mainEvent() {
 
     form.addEventListener('input', (event) => {
       console.log('input', event.target.value);
-      currentList = filterList(currentList, event.target.value);
-      injectHTML(currentList);
+      const filteredList = filterList(currentList, event.target.value);
+      injectHTML(filteredList);
     });
 
     // And here's an eventListener! It's listening for a "submit" button specifically being clicked
