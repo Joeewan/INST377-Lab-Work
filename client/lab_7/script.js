@@ -71,9 +71,8 @@ function filterList(array, filterInputValue) {
     const lowerCaseName = item.name.toLowerCase();
     const lowerCaseQuery = filterInputValue.toLowerCase();
     return lowerCaseName.inlcudes(lowerCaseQuery);
-  })
+  });
   return newArray;
-
 }
 
 async function mainEvent() {
@@ -124,7 +123,7 @@ async function mainEvent() {
 
     form.addEventListener('input', (event) => {
       console.log('input', event.target.value);
-      currentList = filterList(arrayFromJson.data.event.target.value);
+      currentList = filterList(currentList, event.target.value);
       injectHTML(newFilterList);
     });
 
