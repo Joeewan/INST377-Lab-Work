@@ -331,10 +331,10 @@ form label {
     height: 80px;
   }
 
-
   .lds-ellipsis_hidden {
     display: hidden; 
   }
+  
   .lds-ellipsis div {
     position: absolute;
     top: 33px;
