@@ -88,18 +88,18 @@ function initMap() {
 }
 
 function markerPlace(array, map) {
-  console.log('markerPlace', array);
-  // const marker = L.marker([51.505, -0.09]).addTo('map');
   map.forEach((layer) => {
     if (layer instanceof L.Marker) {
       layer.remove();
     }
   });
 
-  array.forEach((item) => {
+  array.forEach((item, index) => {
     const {coordinates} = item.geocoded_column_1;
-    console.log(item);
     L.marker([coordinates[1], coordinates[0]]).addTo(map);
+    if (index === 0) {
+      map.setView([coordinates[1], coordinates[0]], 12);
+    }
   });
 }
 
