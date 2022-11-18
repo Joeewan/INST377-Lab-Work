@@ -90,7 +90,7 @@ function initMap() {
 function markerPlace(array, map) {
   console.log('markerPlace', array);
   // const marker = L.marker([51.505, -0.09]).addTo('map');
-  map.forEach((item) => {
+  map.forEach((layer) => {
     if (layer instanceof L.Marker) {
       layer.remove();
     }
