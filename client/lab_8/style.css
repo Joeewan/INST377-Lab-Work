@@ -314,10 +314,15 @@ form label {
     justify-content: center;
     align-items: center;
   }
-
-  map {
-    display: none;
+  .right_section{
+    background-color: aqua;
+      flex: 1 2 auto;
+      margin: 1rem;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
   }
+
 }
 
 .lds-ellipsis {
