@@ -88,7 +88,7 @@ function initMap() {
 }
 
 function markerPlace(array, map) {
-  map.forEach((layer) => {
+  map.eachLayer((layer) => {
     if (layer instanceof L.Marker) {
       layer.remove();
     }
