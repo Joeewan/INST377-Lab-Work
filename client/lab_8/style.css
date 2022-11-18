@@ -127,7 +127,6 @@ form {
 }
 
 .left_section {
-  border-style: double;
   background-color: #effffa;
   flex: 0 1 auto;
   margin: 1rem;
@@ -135,12 +134,12 @@ form {
 }
 
 .right_section {
-  border-style: double;
   background-color: #effffa;
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
-  max-width: 450px;
+  display: flex;
+  flex-direction: column;
 }
 
 /*
