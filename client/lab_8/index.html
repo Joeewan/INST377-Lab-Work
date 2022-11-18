@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joseph Ewan's Lab for INST377</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Joseph Ewan's Lab 7</h1>
+      </header>
+      <div id="map"></div>
+      <div class="container">
+        <div class="left_section box">
+          <h2>User Input</h2>
+          <form action="/api" class="box main_form">
+            <div>
+              <label for="resto">Restaurants Name</label>
+              <input type="text" name="resto" id="resto" />
+            </div>
+            <div class="lds-ellipsis">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <button type="submit" id="get-resto">Search Places</button>
+          </form>
+        </div>
+      </div>
+      <div class="container">
+        <div class="right_section box">
+          <h3>Local Restaurants</h3>
+          <div class="box" id="restaurant_list">
+            A list of Restaurants will appear here XD
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <a
+        href="http://github.com/Joeewan"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Link: https://github.com/Joeewan</a
+      >
+      Github Joeewan
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
