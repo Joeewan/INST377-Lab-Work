@@ -82,10 +82,7 @@ function markerPlace(array, map) {
   });
 }
 
-function initChart(chart, object) {
-  const labels = Object.keys(object);
-  const info = Object.keys(object).map((item) => object[item].length);
-
+function initChart(chart) {
   const data = {
     labels: labels,
     datasets: [{
