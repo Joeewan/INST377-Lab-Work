@@ -1,4 +1,4 @@
-* {
+* * {
   box-sizing: border-box;
 }
 
@@ -83,7 +83,7 @@ form {
 /*
     This rule implies that the H1 tag lives within another HTML tag
     It "inherits" some rules from the above
-    Those rules  a block with the class of 'header'
+    Those rules won't apply to an h1 that's outside a block with the class of 'header'
   */
 
 .header h1 {

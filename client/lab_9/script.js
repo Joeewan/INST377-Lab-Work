@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -104,7 +106,7 @@ function markerPlace(array, map) {
 async function mainEvent() {
   /*
       ## Main Event
-        Separating youride functions will help you organize your thoughts
+        Separating your main programming from your side functions will help you organize your thoughts
         When you're not working in a heavily-commented "learning" file, this also is more legible
         If you separate your work, when one piece is complete, you can save it and trust it
     */
