@@ -84,12 +84,12 @@ function markerPlace(array, map) {
 
 function initChart(chart) {
   const labels = [
-    'Apples',
-    'Oranges',
-    'Grapes',
-    'Peaches',
-    'Lemons',
-    'Strawberry'
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June'
   ];
 
   const data = {
