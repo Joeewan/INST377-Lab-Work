@@ -137,6 +137,18 @@ function initChart(chart) {
   // document.getElementById('myChart');
 }
 
+function shapeDataforLineChart(array) {
+  return array.reduce((collection, item) => {
+    if(!collection[item.category]) {
+      collection[item.category] = [item]
+    } else {
+      collection[item.category].push(item);
+    }
+
+    return collection;
+  }, {});
+}
+
 async function getData() {
   const url = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
   const data = await fetch(url);
@@ -158,29 +170,15 @@ async function mainEvent() {
   const submit = document.querySelector('#get-resto'); // get a reference to your submit button
   const loadAnimation = document.querySelector('.lds-ellipsis');
   const chartTarget = document.querySelector('#myChart');
-  submit.style.display = 'none'; // let your submit button disappear
+  submit.style.display = 'none'; 
 
-  /*
-      Let's get some data from the API - it will take a second or two to load
-      This next line goes to the request for 'GET' in the file at /server/routes/foodServiceRoutes.js
-      It's at about line 27 - go have a look and see what we're retrieving and sending back.
-     */
   const results = await fetch('/api/foodServicePG');
   const arrayFromJson = await results.json(); // here is where we get the data from our request as JSON
 
-  initChart(chartTarget);
+  const myChart = initChart(chartTarget);
+
   const chartData = await getData();
-
-  /*
-      Below this comment, we log out a table of all the results using "dot notation"
-      An alternate notation would be "bracket notation" - arrayFromJson["data"]
-      Dot notation is preferred in JS unless you have a good reason to use brackets
-      The 'data' key, which we set at line 38 in foodServiceRoutes.js, contains all 1,000 records we need
-    */
   // console.table(arrayFromJson.data);
-
-  // in your browser console, try expanding this object to see what fields are available to work with
-  // for example: arrayFromJson.data[0].name, etc
   console.log(arrayFromJson.data[0]);
 
   // this is called "string interpolation" and is how we build large text blocks with variables
