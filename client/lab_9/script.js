@@ -27,7 +27,7 @@ function injectHTML(list) {
 
       ## What to do in this function
         - Accept a list of restaurant objects
-        - using a .forEach method, inject a list element into your index.html for every element in the list
+        - using a .forEach method, index.html for every element in the list
         - Display the name of that restaurant and what category of food it is
     */
 }
@@ -43,20 +43,6 @@ function processRestaurants(list) {
   // const randos = array.map((item) => {
   // return;
   // })
-
-  /*
-        ## Process Data Separately From Injecting It
-          This function should accept your 1,000 records
-          then select 15 random records
-          and return an object containing only the restaurant's name, category, and geocoded location
-          So we can inject them using the HTML injection function
-
-          You can find the column names by carefully looking at your single returned record
-          https://data.princegeorgescountymd.gov/Health/Food-Inspection/umjn-t2iz
-
-        ## What to do in this function:
-
-       
 }
 
 function filterList(array, filterInputValue) {
@@ -96,6 +82,38 @@ function markerPlace(array, map) {
   });
 }
 
+function initChart(chart) {
+  const labels = [
+    'Apples',
+    'Oranges',
+    'Grapes',
+    'Peaches',
+    'Lemons',
+    'Strawberry'
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My First DataSet',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [0, 10, 5, 2, 20, 30, 45]
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+
+  return new Chart(
+    chart,
+    config
+  );
+}
+
 async function mainEvent() {
   /*
         ## Main Event
@@ -103,11 +121,13 @@ async function mainEvent() {
           When you're not working in a heavily-commented "learning" file, this also is more legible
           If you separate your work, when one piece is complete, you can save it and trust it
       */
-  const pageMap = initMap();
+  // const pageMap = initMap();
+
   // the async keyword means we can make API requests
   const form = document.querySelector('.main_form'); // get your main form so you can do JS with it
   const submit = document.querySelector('#get-resto'); // get a reference to your submit button
   const loadAnimation = document.querySelector('.lds-ellipsis');
+  const chartTarget = document.querySelector('#myChart');
   submit.style.display = 'none'; // let your submit button disappear
 
   /*
@@ -116,17 +136,20 @@ async function mainEvent() {
         It's at about line 27 - go have a look and see what we're retrieving and sending back.
        */
   const results = await fetch('/api/foodServicePG');
-  const arrayFromJson = await results.json(); // here where we get the data from our request as JSON
+  const arrayFromJson = await results.json(); 
+  // here where we get the data from our request as JSON
+
+  initChart(chartTarget);
 
   /*
         Below this comment, we log out a table of all the results using "dot notation"
         An alternate notation would be "bracket notation" - arrayFromJson["data"]
         Dot notation is preferred in JS unless you have a good reason to use brackets
-        The 'data' key, which we set at line 38 in foodServiceRoutes.js, contains all 1,000 records we need
+    The 'data' keyhich we set at line 38 in foodServiceRoutes.js, contains all 1,000 records we need
       */
   // console.table(arrayFromJson.data);
 
-  // in your browser console, try expanding this object to see what fields are available to work with
+  // in your browser console,  expanding this object to see what fields are available to work with
   // for example: arrayFromJson.data[0].name, etc
   console.log(arrayFromJson.data[0]);
 
@@ -152,9 +175,9 @@ async function mainEvent() {
     });
 
     // And here's an eventListener! It's listening for a "submit" button specifically being clicked
-    // this is a synchronous event event, because we already did our async request above, and waited for it to resolve
+    // this is a synchronous event evid our async request above, and waited for it to resolve
     form.addEventListener('submit', (submitEvent) => {
-      // This is needed to stop our page from changing to a new URL even though it heard a GET request
+      // This is needed to stop our page from anging to a new URL even though it heard a GET request
       submitEvent.preventDefault();
 
       // This constant will have the value of your 15-restaurant collection when it processes
@@ -162,7 +185,7 @@ async function mainEvent() {
 
       // And this function call will perform the "side effect" of injecting the HTML list for you
       injectHTML(currentList);
-      markerPlace(currentList, pageMap);
+      // markerPlace(currentList, pageMap);
 
       // By separating the functions, we open the possibility of regenerating the list
       // without having to retrieve fresh data every time
