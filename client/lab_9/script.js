@@ -111,7 +111,7 @@ function initChart(chart, object) {
   const data = {
     labels: labels,
     datasets: [{
-      label: 'My first dataset',
+      label: 'Restuarants By Category',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
       data: info
@@ -119,7 +119,7 @@ function initChart(chart, object) {
   };
 
   const config = {
-    type: 'line',
+    type: 'bar',
     data: data,
     options: {}
   };
@@ -129,6 +129,19 @@ function initChart(chart, object) {
     config
   );
   // document.getElementById('myChart');
+}
+
+function changeChart(chart, data) {
+  const labels = Object.keys(object);
+  const info = Object.keys(object).map((item) => object[item].length);
+
+  chart.data.labels = labels;
+  chart.data.datasets.forEach((set) => { 
+    set.data = info;
+    return set;
+  });
+
+  chart.update();
 }
 
 function shapeDataforLineChart(array) {
@@ -171,7 +184,6 @@ async function mainEvent() {
 
   const chartData = await getData();
   const shapedData = shapeDataforLineChart(chartData);
-  console.log(shapedData);
   const myChart = initChart(chartTarget, shapedData);
 
   if (chartData.length > 0) {
@@ -200,6 +212,8 @@ async function mainEvent() {
 
       // And this function call will perform the "side effect" of injecting the HTML list for you
       injectHTML(currentList);
+      const localData = shapeDataforLineChart(currentList);
+      changeChart(myChart, localData);
       // markerPlace(currentList, pageMap);
 
       // By separating the functions, we open the possibility of regenerating the list
