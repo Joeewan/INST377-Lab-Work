@@ -135,8 +135,10 @@ function changeChart(chart, data) {
   const labels = Object.keys(object);
   const info = Object.keys(object).map((item) => object[item].length);
 
+  // eslint-disable-next-line no-param-reassign
   chart.data.labels = labels;
   chart.data.datasets.forEach((set) => { 
+    // eslint-disable-next-line no-param-reassign
     set.data = info;
     return set;
   });
