@@ -104,15 +104,9 @@ function markerPlace(array, map) {
   });
 }
 
-function initChart(chart) {
-  const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June'
-  ];
+function initChart(chart, object) {
+  const labels = Object.keys(object);
+  const info = Object.keys(object).map((item) => object[item].length);
 
   const data = {
     labels: labels,
@@ -120,7 +114,7 @@ function initChart(chart) {
       label: 'My first dataset',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45]
+      data: info
     }]
   };
 
