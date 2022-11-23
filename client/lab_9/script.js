@@ -137,6 +137,14 @@ function initChart(chart) {
   // document.getElementById('myChart');
 }
 
+async function getData() {
+  const url = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+  const data = await fetch(url);
+  const json = await data.json();
+  const reply = json.filter((item) => Boolean(item.geocoded_column_1)).filter((item) => Boolean(item.name));
+  return reply;
+}
+
 async function mainEvent() {
   /*
       ## Main Event
@@ -161,6 +169,7 @@ async function mainEvent() {
   const arrayFromJson = await results.json(); // here is where we get the data from our request as JSON
 
   initChart(chartTarget);
+  const chartData = await getData();
 
   /*
       Below this comment, we log out a table of all the results using "dot notation"
@@ -180,7 +189,7 @@ async function mainEvent() {
   );
 
   // This IF statement ensures we can't do anything if we don't have information yet
-  if (arrayFromJson.data?.length > 0) {
+  if (chartData.data.length > 0) {
     submit.style.display = 'block'; // let's turn the submit button back on by setting it to display as a block when we have data available
 
     loadAnimation.classList.remove('lds-ellipsis');
