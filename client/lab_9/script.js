@@ -175,9 +175,10 @@ async function mainEvent() {
   const results = await fetch('/api/foodServicePG');
   const arrayFromJson = await results.json(); // here is where we get the data from our request as JSON
 
-  const myChart = initChart(chartTarget);
-
   const chartData = await getData();
+  const shapedData = shapeDataforLineChart(chartData);
+  console.log(shapedData);
+  const myChart = initChart(chartTarget, shapedData);
   // console.table(arrayFromJson.data);
   console.log(arrayFromJson.data[0]);
 
