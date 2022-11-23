@@ -104,7 +104,7 @@ function markerPlace(array, map) {
   });
 }
 
-function initChart() {
+function initChart(chart) {
   const labels = [
     'January',
     'February',
