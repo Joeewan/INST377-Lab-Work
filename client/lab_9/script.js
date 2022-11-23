@@ -82,7 +82,8 @@ function initMap() {
   const map = L.map('map').setView([38.9897, -76.9378], 13);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
   return map;
 }
@@ -95,12 +96,45 @@ function markerPlace(array, map) {
   });
 
   array.forEach((item, index) => {
-    const {coordinates} = item.geocoded_column_1;
+    const { coordinates } = item.geocoded_column_1;
     L.marker([coordinates[1], coordinates[0]]).addTo(map);
     if (index === 0) {
       map.setView([coordinates[1], coordinates[0]], 12);
     }
   });
+}
+
+function initChart() {
+  const labels = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June'
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My first dataset',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [0, 10, 5, 2, 20, 30, 45]
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+
+  return new Chart(
+    chart,
+    config
+  );
+  // document.getElementById('myChart');
 }
 
 async function mainEvent() {
@@ -115,6 +149,7 @@ async function mainEvent() {
   const form = document.querySelector('.main_form'); // get your main form so you can do JS with it
   const submit = document.querySelector('#get-resto'); // get a reference to your submit button
   const loadAnimation = document.querySelector('.lds-ellipsis');
+  const chartTarget = document.querySelector('#myChart');
   submit.style.display = 'none'; // let your submit button disappear
 
   /*
