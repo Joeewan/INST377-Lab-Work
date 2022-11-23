@@ -179,16 +179,8 @@ async function mainEvent() {
   const shapedData = shapeDataforLineChart(chartData);
   console.log(shapedData);
   const myChart = initChart(chartTarget, shapedData);
-  // console.table(arrayFromJson.data);
-  console.log(arrayFromJson.data[0]);
 
-  // this is called "string interpolation" and is how we build large text blocks with variables
-  console.log(
-    `${arrayFromJson.data[0].name} ${arrayFromJson.data[0].category}`
-  );
-
-  // This IF statement ensures we can't do anything if we don't have information yet
-  if (chartData.data.length > 0) {
+  if (chartData.length > 0) {
     submit.style.display = 'block'; // let's turn the submit button back on by setting it to display as a block when we have data available
 
     loadAnimation.classList.remove('lds-ellipsis');
