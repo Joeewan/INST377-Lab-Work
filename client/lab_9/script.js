@@ -82,15 +82,9 @@ function markerPlace(array, map) {
   });
 }
 
-function initChart(chart) {
-  const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June'
-  ];
+function initChart(chart, object) {
+  const labels = Object.keys(object);
+  const info = Object.keys(object).map((item) => object[item].length);
 
   const data = {
     labels: labels,
